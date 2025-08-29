@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelWheels - Premium Tourist Bus Service</title>
+    <title>BharatYatra - Explore India by Bus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         :root {
             --primary: #1a73e8;
             --secondary: #34a853;
@@ -15,27 +22,103 @@
             --dark: #202124;
             --gray: #5f6368;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
+
         body {
             background-color: #f5f7fa;
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -47,118 +130,20 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .btn:hover {
             background-color: #0d5cbf;
             transform: translateY(-2px);
         }
-        
+
         .btn-accent {
             background-color: var(--accent);
         }
-        
+
         .btn-accent:hover {
             background-color: #e65c00;
         }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: var(--dark);
-        }
-        
-        .section-title span {
-            color: var(--primary);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--dark);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-        
+
         /* Booking Widget */
         .booking-widget {
             background-color: white;
@@ -169,24 +154,25 @@
             position: relative;
             z-index: 10;
         }
-        
+
         .booking-form {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-        
+
         .form-group {
             margin-bottom: 15px;
+            position: relative;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark);
         }
-        
+
         .form-group input,
         .form-group select {
             width: 100%;
@@ -195,60 +181,100 @@
             border-radius: 4px;
             font-size: 1rem;
         }
-        
+
+        .cities-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            z-index: 100;
+        }
+
+        .cities-dropdown div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .cities-dropdown div:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
         /* Destinations Section */
         .destinations {
             background-color: white;
         }
-        
+
         .destination-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .destination-card {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-        
+
         .destination-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .destination-img {
             height: 200px;
             width: 100%;
             object-fit: cover;
         }
-        
+
         .destination-content {
             padding: 20px;
         }
-        
+
         .destination-content h3 {
             margin-bottom: 10px;
             font-size: 1.5rem;
         }
-        
+
         .destination-content p {
             color: var(--gray);
             margin-bottom: 15px;
         }
-        
+
         /* Packages Section */
         .packages {
             background-color: #f8f9fa;
         }
-        
+
         .package-tabs {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
-        
+
         .tab-btn {
             padding: 10px 20px;
             background: none;
@@ -259,112 +285,157 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .tab-btn.active {
             border-bottom: 3px solid var(--primary);
             color: var(--primary);
         }
-        
+
         .package-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-        
+
         .package-card {
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .package-img {
             height: 200px;
             width: 100%;
             object-fit: cover;
         }
-        
+
         .package-content {
             padding: 20px;
         }
-        
+
         .package-content h3 {
             margin-bottom: 10px;
             font-size: 1.5rem;
         }
-        
+
         .package-info {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
         }
-        
+
         .package-info span {
             color: var(--gray);
         }
-        
+
         .package-price {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         /* Features Section */
         .features {
             background-color: white;
         }
-        
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
             text-align: center;
             padding: 30px 20px;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
-        
+
         .feature-card:hover {
             background-color: #f5f7fa;
             transform: translateY(-5px);
         }
-        
+
         .feature-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
-        
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 60px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.2rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -374,31 +445,31 @@
             height: 2px;
             background-color: var(--primary);
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: #ddd;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--primary);
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -411,18 +482,18 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .social-links a:hover {
             background-color: var(--primary);
             transform: translateY(-3px);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .section-title {
@@ -433,7 +504,7 @@
                 font-size: 2.5rem;
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -470,8 +541,19 @@
             .booking-widget {
                 margin-top: -40px;
             }
+            
+            .package-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                margin-bottom: 10px;
+                width: 200px;
+                text-align: center;
+            }
         }
-        
+
         @media (max-width: 576px) {
             .section {
                 padding: 60px 0;
@@ -499,7 +581,7 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <i class="fas fa-bus"></i>
-                    TravelWheels
+                    BharatYatra
                 </a>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
@@ -519,7 +601,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Discover Amazing Places with Comfort</h1>
+                <h1>Explore Incredible India by Bus</h1>
                 <p>Book your tourist bus with us and experience the journey of a lifetime with premium comfort and safety</p>
                 <a href="#booking" class="btn btn-accent">Book Now</a>
             </div>
@@ -532,11 +614,13 @@
             <form class="booking-form">
                 <div class="form-group">
                     <label for="from">From</label>
-                    <input type="text" id="from" placeholder="Departure City">
+                    <input type="text" id="from" placeholder="Departure City" autocomplete="off">
+                    <div class="cities-dropdown" id="from-dropdown"></div>
                 </div>
                 <div class="form-group">
                     <label for="to">To</label>
-                    <input type="text" id="to" placeholder="Destination City">
+                    <input type="text" id="to" placeholder="Destination City" autocomplete="off">
+                    <div class="cities-dropdown" id="to-dropdown"></div>
                 </div>
                 <div class="form-group">
                     <label for="date">Date</label>
@@ -549,6 +633,7 @@
                         <option value="2">2 Passengers</option>
                         <option value="3">3 Passengers</option>
                         <option value="4">4 Passengers</option>
+                        <option value="5">5+ Passengers</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -597,12 +682,12 @@
         <div class="container">
             <h2 class="section-title">Popular <span>Packages</span></h2>
             <div class="package-tabs">
-                <button class="tab-btn active">Weekend Getaways</button>
-                <button class="tab-btn">Adventure Tours</button>
-                <button class="tab-btn">Pilgrimage Tours</button>
+                <button class="tab-btn active" data-tab="weekend">Weekend Getaways</button>
+                <button class="tab-btn" data-tab="adventure">Adventure Tours</button>
+                <button class="tab-btn" data-tab="pilgrimage">Pilgrimage Tours</button>
             </div>
             <div class="package-grid">
-                <div class="package-card">
+                <div class="package-card" data-category="weekend">
                     <img src="https://images.unsplash.com/photo-1598940603846-a1edd0ef5274?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Manali Package" class="package-img">
                     <div class="package-content">
                         <h3>Manali Volvo Tour</h3>
@@ -615,7 +700,7 @@
                         <a href="#" class="btn">Book Now</a>
                     </div>
                 </div>
-                <div class="package-card">
+                <div class="package-card" data-category="weekend">
                     <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Goa Package" class="package-img">
                     <div class="package-content">
                         <h3>Goa Beach Fun</h3>
@@ -628,15 +713,15 @@
                         <a href="#" class="btn">Book Now</a>
                     </div>
                 </div>
-                <div class="package-card">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Rishikesh Package" class="package-img">
+                <div class="package-card" data-category="adventure">
+                    <img src="https://images.unsplash.com/photo-1599638157172-8b5ef6b22c4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Adventure Package" class="package-img">
                     <div class="package-content">
-                        <h3>Rishikesh Spiritual Journey</h3>
+                        <h3>Rishikesh Rafting</h3>
                         <div class="package-info">
                             <span><i class="fas fa-clock"></i> 2 Days</span>
                             <span><i class="fas fa-user-friends"></i> Up to 15 People</span>
                         </div>
-                        <p>Find peace and spirituality in Rishikesh with our specially curated package.</p>
+                        <p>Experience the thrill of white water rafting in Rishikesh with our adventure package.</p>
                         <div class="package-price">₹3,999 / person</div>
                         <a href="#" class="btn">Book Now</a>
                     </div>
@@ -682,13 +767,58 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our <span>Customers Say</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We had an amazing family trip to Manali. The bus was comfortable and the driver was very professional. Will definitely book again!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Customer" class="author-img">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Family Vacation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a solo traveler, safety is my top priority. BharatYatra provided a secure and comfortable journey to Rishikesh. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="author-img">
+                        <div class="author-info">
+                            <h4>Rahul Verma</h4>
+                            <p>Solo Traveler</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Our college group had an incredible time on the Goa trip. The bus was spacious and the amenities were great. Thanks for the wonderful experience!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer" class="author-img">
+                        <div class="author-info">
+                            <h4>Neha Patel</h4>
+                            <p>Group Travel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>About TravelWheels</h3>
-                    <p>TravelWheels is a premium tourist bus service provider offering comfortable and safe journeys to amazing destinations across India.</p>
+                    <h3>About BharatYatra</h3>
+                    <p>BharatYatra is a premium tourist bus service provider offering comfortable and safe journeys to amazing destinations across India.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -721,12 +851,12 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Mumbai, India</li>
                         <li><i class="fas fa-phone"></i> +91 9876543210</li>
-                        <li><i class="fas fa-envelope"></i> info@travelwheels.com</li>
+                        <li><i class="fas fa-envelope"></i> info@bharatyatra.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 TravelWheels. All rights reserved.</p>
+                <p>&copy; 2023 BharatYatra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -741,14 +871,26 @@
         });
         
         // Package Tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
+        const packageTabBtns = document.querySelectorAll('.packages .tab-btn');
+        const packageCards = document.querySelectorAll('.package-card');
         
-        tabBtns.forEach(btn => {
+        packageTabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Remove active class from all buttons
-                tabBtns.forEach(b => b.classList.remove('active'));
+                packageTabBtns.forEach(b => b.classList.remove('active'));
                 // Add active class to clicked button
                 btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-tab');
+                
+                // Filter packages
+                packageCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
         
@@ -763,6 +905,106 @@
         
         const formattedToday = `${yyyy}-${mm}-${dd}`;
         document.getElementById('date').setAttribute('min', formattedToday);
+
+        // Indian Cities Data
+        const indianCities = [
+            "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", 
+            "Chennai", "Kolkata", "Surat", "Pune", "Jaipur", 
+            "Lucknow", "Kanpur", "Nagpur", "Visakhapatnam", "Bhopal", 
+            "Patna", "Ludhiana", "Agra", "Nashik", "Vadodara",
+            "Faridabad", "Meerut", "Rajkot", "Kalyan-Dombivli", "Vasai-Virar",
+            "Varanasi", "Srinagar", "Aurangabad", "Dhanbad", "Amritsar",
+            "Navi Mumbai", "Allahabad", "Ranchi", "Howrah", "Coimbatore",
+            "Jabalpur", "Gwalior", "Vijayawada", "Jodhpur", "Madurai",
+            "Raipur", "Kota", "Chandigarh", "Guwahati", "Solapur",
+            "Hubli-Dharwad", "Bareilly", "Moradabad", "Mysore", "Gurgaon",
+            "Aligarh", "Jalandhar", "Tiruchirappalli", "Bhubaneswar", "Salem",
+            "Warangal", "Guntur", "Bhiwandi", "Saharanpur", "Gorakhpur",
+            "Bikaner", "Amravati", "Noida", "Jamshedpur", "Bhilai",
+            "Cuttack", "Firozabad", "Kochi", "Nellore", "Bhavnagar",
+            "Dehradun", "Durgapur", "Asansol", "Rourkela", "Nanded",
+            "Kolhapur", "Ajmer", "Akola", "Gulbarga", "Jamnagar",
+            "Ujjain", "Loni", "Siliguri", "Jhansi", "Ulhasnagar",
+            "Jammu", "Sangli-Miraj", "Mangalore", "Erode", "Belgaum",
+            "Kurnool", "Davanagere", "Kozhikode", "Rajpur", "Kakinada",
+            "Karnal", "Shahjahanpur", "Hospet", "Ozhukarai", "Bathinda",
+            "Haldia", "Thanjavur", "Bharatpur", "Panihati", "Latur",
+            "Dhule", "Rohtak", "Korba", "Bhilwara", "Brahmapur",
+            "Muzaffarpur", "Ahmednagar", "Mathura", "Kollam", "Avadi",
+            "Kadapa", "Anantapuram", "Morbi", "Bilaspur", "Bhiwani",
+            "Nizamabad", "Sagar", "Tumkur", "Hisar", "Fyzabad",
+            "Parbhani", "Bahraich", "Barmer", "Rampur", "Shivamogga",
+            "Ratlam", "Modinagar", "Dindigul", "Bali", "Khammam",
+            "Udaipur", "Orai", "Hapur", "Banda", "Etawah",
+            "Raiganj", "Phusro", "Chittoor", "Vellore", "Sambalpur",
+            "Gandhinagar", "Guna", "Mandsaur", "Hindupur", "Nabadwip",
+            "Bangaon", "Kendujhar", "Titagarh", "Alwar", "Pudukkottai",
+            "Hazaribagh", "Kishanganj", "Veraval", "Khanna", "Katni",
+            "Suryapet", "Bhadreswar", "Gadag", "Chandrapur", "Khardah",
+            "Dibrugarh", "Baran", "Bongaigaon", "Silchar", "Gondia",
+            "Yamunanagar", "Palwal", "Tinsukia", "Srikakulam", "Rewa",
+            "Nagapattinam", "Sultanpur", "Medininagar", "Hoshiarpur", "Mirzapur",
+            "Anand", "Bhadravati", "Madhyamgram", "Bhiwadi", "Berhampur",
+            "Ongole", "Deoghar", "Haldwani", "Nagaon", "Chhapra",
+            "Puri", "Haldia", "Bulandshahr", "Panipat", "Dharmavaram",
+            "Habra", "Saharsa", "Port Blair", "Karaikudi", "Kavali",
+            "Tadepalligudem", "Kishangarh", "Jorhat", "Karaikal", "Kothagudem"
+        ];
+
+        // City Search Functionality
+        const fromInput = document.getElementById('from');
+        const toInput = document.getElementById('to');
+        const fromDropdown = document.getElementById('from-dropdown');
+        const toDropdown = document.getElementById('to-dropdown');
+
+        function filterCities(input, dropdown) {
+            const value = input.value.toLowerCase();
+            dropdown.innerHTML = '';
+            
+            if (value.length < 2) {
+                dropdown.style.display = 'none';
+                return;
+            }
+            
+            const filteredCities = indianCities.filter(city => 
+                city.toLowerCase().includes(value)
+            );
+            
+            if (filteredCities.length > 0) {
+                dropdown.style.display = 'block';
+                filteredCities.slice(0, 5).forEach(city => {
+                    const cityElement = document.createElement('div');
+                    cityElement.textContent = city;
+                    cityElement.addEventListener('click', () => {
+                        input.value = city;
+                        dropdown.style.display = 'none';
+                    });
+                    dropdown.appendChild(cityElement);
+                });
+            } else {
+                dropdown.style.display = 'none';
+            }
+        }
+
+        fromInput.addEventListener('input', () => filterCities(fromInput, fromDropdown));
+        toInput.addEventListener('input', () => filterCities(toInput, toDropdown));
+
+        // Hide dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!fromInput.contains(e.target) && !fromDropdown.contains(e.target)) {
+                fromDropdown.style.display = 'none';
+            }
+            if (!toInput.contains(e.target) && !toDropdown.contains(e.target)) {
+                toDropdown.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Searching for buses...');
+            // In a real application, this would send the form data to a server
+        });
     </script>
 </body>
 </html>
